@@ -13,3 +13,4 @@ public:
     std::wstring encrypt(const std::wstring& text);
     std::wstring decrypt(const std::wstring& text);
 };
+
