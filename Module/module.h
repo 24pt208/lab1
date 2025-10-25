@@ -1,22 +1,15 @@
 #pragma once
 #include <string>
-#include <vector>
+#include <locale>
 
-class routeCipher
-{
+class RouteCipher {
 private:
-    int key; // количество столбцов
+    int columns;
     
-    // Вспомогательные методы
-    std::string getValidText(const std::string& text);
-    std::vector<std::vector<char>> createTable(const std::string& text, bool encrypt);
-    std::string readTableEncrypt(const std::vector<std::vector<char>>& table);
-    std::string readTableDecrypt(const std::vector<std::vector<char>>& table);
-
 public:
-    routeCipher() = delete;
-    routeCipher(int k);
-    
-    std::string encrypt(const std::string& text);
-    std::string decrypt(const std::string& text);
+    RouteCipher(int key);
+    void setKey(int key);
+    int getKey() const;
+    std::wstring encrypt(const std::wstring& text);
+    std::wstring decrypt(const std::wstring& text);
 };
